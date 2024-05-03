@@ -12,7 +12,7 @@ const sumToNB = (n: number): void => {
     console.log(performance.now());
   };
   
-  sumToNB(5);
+sumToNB(5);
   
   const sumToNA = (n: number): void => {
     let end: number = n;
@@ -25,5 +25,14 @@ const sumToNB = (n: number): void => {
     console.log(performance.now());
   };
   
-  sumToNA(5);
+sumToNA(5);
+
+const sumToNC = (num: number): number => {
+    if (num === 0) return 0; 
+    let sum: number = num + sumToNC(num - 1); 
+    return sum;
+  };
+  
+const a: number = sumToNC(5);
+console.log(a);
   
