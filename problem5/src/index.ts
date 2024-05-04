@@ -1,15 +1,24 @@
 import express from "express";
+import bodyParser from "body-parser";
+import userRoutes from "./routes/user.route";
+import path from "path";
 
 const app = express();
-const port = process.env.PORT || 8080;
 
-app.use(express.json());
+// Middleware
+app.use(bodyParser.json());
 
+// Routes
+// setup for static files
+app.use(express.static(path.join(process.cwd(), "./src/public")));
 
-app.get("/ping", (req, res) => {
-  res.json({ message: "pong" }).status(200);
-});
+// setup for ejs template file
+app.set("view engine", "ejs");
+app.set("views", "./src/views");
+app.use("/api/users", userRoutes);
 
-app.listen(port, () => {
-  console.log(`Server up and running on port: ${port}`);
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

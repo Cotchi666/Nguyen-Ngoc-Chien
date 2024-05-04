@@ -1,0 +1,49 @@
+<%- include ('./base/header.ejs')  %>
+
+
+
+<div class="container my-3">
+    <div class="alert bg-warning">
+        <h4 class="text-center">All Records</h4>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Creat Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% if (records) { %>
+
+                <% for(var i=0; i< records.length; i++){ %>
+            <tr>
+                <td><%= records[i].first_name %></td>
+                <td><%= records[i].last_name %></td>
+                <td><%= records[i].email %></td>
+                <td><%= records[i].created_at %></td>
+                <td>
+                    <a href="/edit/<%= records[i]._id %>" class="btn btn-warning w-75">Edit</a>
+                </td>
+
+                <td>
+                    <form action="/delete/<%= records[i]._id %>" method="get">
+                        <input type="submit" value="Delete" class="btn btn-danger" >
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+
+<%- include ('./base/footer.ejs')  %>
