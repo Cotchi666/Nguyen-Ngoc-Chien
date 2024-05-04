@@ -14,18 +14,16 @@ const sumToNB = (n: number): void => {
   
 sumToNB(5);
   
-  const sumToNA = (n: number): void => {
-    let end: number = n;
-    let sum: number = 0;
-    for (let i: number = 0; i < n; i++) {
-      end = n - i;
-      sum += end;
-    }
-    console.log(sum);
-    console.log(performance.now());
-  };
-  
-sumToNA(5);
+const sumToNA = (n: number): number => {
+  if (n <= 0) return 0; 
+  return n * (n + 1) / 2;
+};
+
+performance.now(); 
+
+const result = sumToNA(5);
+console.log(result);
+
 
 const sumToNC = (num: number): number => {
     if (num === 0) return 0; 
