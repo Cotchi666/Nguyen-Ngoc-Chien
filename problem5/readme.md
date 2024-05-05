@@ -3,7 +3,18 @@
 ##### USER INTERFACE:
   - User could access http://localhost:8080/read to interact with view.
 ##### BACKEND API:
-  - OR performing HTTP requests with cURL via: http://localhost:8080/api/users
+  - GET /api/users: Retrieves all users from the database.
+  - GET /api/users/:id: Retrieves a user by their ID from the database.
+  - PUT /api/users/:id: Updates a user's information based on their ID.
+  - POST /api/users/create: Creates a new user.
+  - DELETE /api/users/:id: Deletes a user by their ID from the database.
+  - Example JSON Content:
+
+             {
+                "first_name": "John",
+                "last_name": "Doe",
+                "email": "johndoe@example.com"
+            }
 
 
 # Requirement
