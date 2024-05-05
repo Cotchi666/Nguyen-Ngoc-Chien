@@ -1,13 +1,17 @@
 import { Router } from 'express';
-import { createUser, getUsers, getUserById, updateUser, deleteUser } from '../controllers/user.controller';
+import { createUser, getUsers, getUserById, updateUser, deleteUser, homeController } from '../controllers/user.controller';
+import { editController } from '../controllers/editController';
 
 const router = Router();
 
 // CRUD routes
-router.post('/', createUser);
-router.get('/', getUsers);
+router.post('/create-new-user', createUser);
+router.get('/create', homeController);
+
+router.get('/read', getUsers);
 router.get('/:id', getUserById);
-router.put('/:id', updateUser);
-router.delete('/:id', deleteUser);
+router.get('/edit/:id', editController);
+router.post('/update/:id', updateUser);
+router.get('/delete/:id', deleteUser);
 
 export default router;

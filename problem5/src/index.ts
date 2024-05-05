@@ -6,7 +6,7 @@ import path from "path";
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
 // Routes
 // setup for static files
