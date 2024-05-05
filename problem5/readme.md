@@ -21,7 +21,7 @@
 
 ### Install [Node 18.18.2](https://nodejs.org/en/blog/release/v18.18.2)
 ### Install [nvm](https://github.com/nvm-sh/nvm)
-### Check out '.env' file and make sure it matches with '.env.example'
+### Create and check out '.env' file and make sure it matches with '.env.example'
                
         PORT=8080
         DB_USER=postgres.kjlbsgoewlgxrrlmqemj
