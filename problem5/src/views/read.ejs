@@ -31,11 +31,11 @@
                 <td><%= records[i].email %></td>
                 <td><%= records[i].created_at %></td>
                 <td>
-                    <a href="/api/users/edit/<%= records[i].id %>" class="btn btn-warning w-75">Edit</a>
+                    <a href="/edit/<%= records[i].id %>" class="btn btn-warning w-75">Edit</a>
                 </td>
 
                 <td>
-                    <form action="/api/users/delete/<%= records[i].id %>" method="get">
+                    <form action="/delete/<%= records[i].id %>" method="get">
                         <input type="submit" value="Delete" class="btn btn-danger" >
                     </form>
                 </td>
