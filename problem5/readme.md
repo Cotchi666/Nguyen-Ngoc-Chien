@@ -3,10 +3,12 @@
 
 ##### User Interface:
   - Access the user interface at http://localhost:8080/read to interact with the view.
+  - I also hosted the project on https://nguyen-ngoc-chien.onrender.com/read
 
 ##### Backend API:
   - Domain: http://localhost:8080/api/users
-
+  - Live domain : https://nguyen-ngoc-chien.onrender.com/api/users
+    
   - GET /api/users: Retrieves all users from the database.
   - GET /api/users/:id: Retrieves a user by their ID from the database.
   - PUT /api/users/:id: Updates a user's information based on their ID.
